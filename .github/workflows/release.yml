@@ -29,8 +29,6 @@ jobs:
     - name: Download Build Artifacts
       uses: actions/download-artifact@v4
       with:
-        workflow: build.yml
-        workflow_conclusion: success
         name: rpc4games-${{ matrix.BUILD_ARCHITECTURE }}
         path: artifact/${{ matrix.BUILD_ARCHITECTURE }}
 
