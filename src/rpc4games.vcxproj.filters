@@ -138,6 +138,12 @@
     <Filter Include="external\asi_loader\x64">
       <UniqueIdentifier>{a8f140a3-aef0-47a2-8010-b64b2945c29e}</UniqueIdentifier>
     </Filter>
+    <Filter Include=".github">
+      <UniqueIdentifier>{b782d779-81ce-4128-b111-5e28d98cc4ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include=".github\workflows">
+      <UniqueIdentifier>{a2bf3a38-2243-46c1-8242-a1be9a153203}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\json\json.hpp">
@@ -271,6 +277,15 @@
     </None>
     <None Include="..\external\asi_loader\x86\dinput8.dll">
       <Filter>external\asi_loader\x86</Filter>
+    </None>
+    <None Include="..\.github\FUNDING.yml">
+      <Filter>.github</Filter>
+    </None>
+    <None Include="..\.github\workflows\build.yml">
+      <Filter>.github\workflows</Filter>
+    </None>
+    <None Include="..\.github\workflows\release.yml">
+      <Filter>.github\workflows</Filter>
     </None>
   </ItemGroup>
 </Project>

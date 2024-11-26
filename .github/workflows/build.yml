@@ -1,0 +1,40 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  SOLUTION_FILE_PATH: .
+  BUILD_CONFIGURATION: Release
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        BUILD_ARCHITECTURE: [x64, x86]
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+      with:
+        msbuild-architecture: ${{ matrix.BUILD_ARCHITECTURE }}
+
+    - name: Build Solution
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      run: msbuild /m /p:Configuration=${{ env.BUILD_CONFIGURATION }} /p:Platform=${{ matrix.BUILD_ARCHITECTURE }} ${{ env.SOLUTION_FILE_PATH }}
+
+    - name: Archive Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: rpc4games-${{ matrix.BUILD_ARCHITECTURE }}
+        path: ${{ env.SOLUTION_FILE_PATH }}/bin/${{ env.BUILD_CONFIGURATION }}
+        retention-days: 1

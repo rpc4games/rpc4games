@@ -244,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitattributes" />
+    <None Include="..\.github\FUNDING.yml" />
+    <None Include="..\.github\workflows\build.yml" />
+    <None Include="..\.github\workflows\release.yml" />
     <None Include="..\.gitignore" />
     <None Include="..\external\asi_loader\x64\dinput8.dll" />
     <None Include="..\external\asi_loader\x86\dinput8.dll" />
