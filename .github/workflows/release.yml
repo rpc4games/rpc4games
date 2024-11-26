@@ -9,9 +9,13 @@ on:
         default: v0.0.0
 
 jobs:
-  download_and_release:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  release:
     runs-on: ubuntu-latest
-    needs: build
+    needs:
+      - build
     strategy:
       matrix:
         BUILD_ARCHITECTURE: [x64, x86]
@@ -23,6 +27,8 @@ jobs:
     - name: Download Build Artifacts
       uses: actions/download-artifact@v4
       with:
+        workflow: build.yml
+        workflow_conclusion: success
         name: rpc4games-${{ matrix.BUILD_ARCHITECTURE }}
         path: release/${{ matrix.BUILD_ARCHITECTURE }}
 
