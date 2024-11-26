@@ -37,13 +37,11 @@ jobs:
     - name: Create Release Zips
       run: |
         mkdir -p release/${{ matrix.BUILD_ARCHITECTURE }}/mods
-        ls
-        ls rpc4games/
-        cp -a rpc4games/LICENSE release/${{ matrix.BUILD_ARCHITECTURE }}
-        cp -a rpc4games/external/asi_loader/${{ matrix.BUILD_ARCHITECTURE }}/dinput8.dll release/${{ matrix.BUILD_ARCHITECTURE }}
-        cp -a rpc4games/external/discord_sdk/${{ matrix.BUILD_ARCHITECTURE }}/discord_game_sdk.dll release/${{ matrix.BUILD_ARCHITECTURE }}/mods
+        cp -a LICENSE release/${{ matrix.BUILD_ARCHITECTURE }}
+        cp -a external/asi_loader/${{ matrix.BUILD_ARCHITECTURE }}/dinput8.dll release/${{ matrix.BUILD_ARCHITECTURE }}
+        cp -a external/discord_sdk/${{ matrix.BUILD_ARCHITECTURE }}/discord_game_sdk.dll release/${{ matrix.BUILD_ARCHITECTURE }}/mods
         cp -a artifact/${{ matrix.BUILD_ARCHITECTURE }}/rpc4games.dll release/${{ matrix.BUILD_ARCHITECTURE }}/mods/rpc4games.dll.asi
-        zip -r ../zips/rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip rpc4games.dll 
+        zip -r release/rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip release/${{ matrix.BUILD_ARCHITECTURE }}/*
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
