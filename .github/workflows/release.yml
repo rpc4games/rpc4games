@@ -39,7 +39,7 @@ jobs:
         cp -a external/discord_sdk/${{ matrix.BUILD_ARCHITECTURE }}/discord_game_sdk.dll release/${{ matrix.BUILD_ARCHITECTURE }}/mods
         cp -a artifact/${{ matrix.BUILD_ARCHITECTURE }}/rpc4games.dll release/${{ matrix.BUILD_ARCHITECTURE }}/mods/rpc4games.dll.asi
         cd release/${{ matrix.BUILD_ARCHITECTURE }}
-        zip -r release/rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip .
+        zip -r ../rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip .
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
