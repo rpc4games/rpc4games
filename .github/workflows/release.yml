@@ -30,7 +30,7 @@ jobs:
       run: |
         mkdir -p release/zips
         cd release
-        zip -r zips/rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip ${{ matrix.BUILD_ARCHITECTURE }}
+        zip -r zips/rpc4games-${{ github.event.inputs.build-ver }}-${{ matrix.BUILD_ARCHITECTURE }}.zip ${{ matrix.BUILD_ARCHITECTURE }}/*.dll
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2

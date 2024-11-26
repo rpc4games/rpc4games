@@ -36,5 +36,5 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: rpc4games-${{ matrix.BUILD_ARCHITECTURE }}
-        path: ${{ env.SOLUTION_FILE_PATH }}/bin/${{ env.BUILD_CONFIGURATION }}
+        path: ${{ env.SOLUTION_FILE_PATH }}/_build/${{ env.BUILD_CONFIGURATION }}/${{ matrix.BUILD_ARCHITECTURE }}
         retention-days: 1
