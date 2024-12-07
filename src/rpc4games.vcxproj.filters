@@ -58,9 +58,6 @@
     <ClCompile Include="classes\Console.cpp">
       <Filter>src\classes</Filter>
     </ClCompile>
-    <ClCompile Include="classes\FileReader.cpp">
-      <Filter>src\classes</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="lib">

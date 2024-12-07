@@ -15,11 +15,16 @@ struct JsonSerializable;
 
 class FileReader {
 public:
-	FileReader(std::filesystem::path path);
-	FileReader(std::filesystem::path path, const std::string& encoding);
+	FileReader(std::filesystem::path path)
+		: FileReader(path, "") {
+	}
 
-	bool isFileReady() const;
-	std::string getPathString(std::vector<std::string>& path) const;
+	FileReader(std::filesystem::path path, const std::string& encoding)
+		: path(std::move(path)), filename(this->path.filename().string()) {
+		if (!encoding.empty()) {
+			converter.emplace(encoding, "UTF-8");
+		}
+	}
 
 	template <typename T>
 	inline bool readFile(T* js) {
@@ -39,8 +44,7 @@ public:
 
 		try {
 			this->data = nlohmann::json::parse(fileContents);
-		}
-		catch (nlohmann::detail::parse_error& e) {
+		} catch (nlohmann::detail::parse_error& e) {
 			utils::logging::Warning(std::format("Failed to parse '{}': \n{}", this->filename, e.what()));
 			return false;
 		}
@@ -53,24 +57,6 @@ public:
 		}
 
 		return true;
-	}
-
-	template <typename T>
-	inline T loadValue(nlohmann::json& json, std::vector<std::string> location) {
-		try {
-			const nlohmann::json* obj = &json;
-			for (const auto& path : location) {
-				if (!obj->contains(path)) {
-					throw nlohmann::json::out_of_range::create(404, "Path not found: " + getPathString(location), obj);
-				}
-				obj = &(*obj)[path];
-			}
-			return obj->get<T>();
-		}
-		catch (nlohmann::json::exception& e) {
-			utils::logging::Warning("Error retrieving value: \n{}", e.what());
-			return T{};
-		}
 	}
 
 private:
