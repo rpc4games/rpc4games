@@ -80,7 +80,7 @@ BEGIN
             VALUE "CompanyName", "Tosox"
             VALUE "FileVersion", "0.1.0.0"
             VALUE "InternalName", "rpc4games"
-            VALUE "LegalCopyright", "Copyright © 2024"
+            VALUE "LegalCopyright", "Copyright © 2025"
             VALUE "OriginalFilename", "rpc4games.dll"
             VALUE "ProductName", "rpc4games"
             VALUE "ProductVersion", "0.1.0.0"
