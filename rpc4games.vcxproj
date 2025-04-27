@@ -73,15 +73,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>..\lib\iconv\lib\x86;..\lib\discord_sdk\lib\x86;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\lib\discord_sdk\include;..\lib\iconv\include;..\lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>lib\iconv\lib\x86;lib\discord_sdk\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>lib\discord_sdk\include;lib\iconv\include;lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <OutDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\dbg\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\lib\discord_sdk\include;..\lib\iconv\include;..\lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>..\lib\iconv\lib\x86;..\lib\discord_sdk\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>lib\discord_sdk\include;lib\iconv\include;lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>lib\iconv\lib\x86;lib\discord_sdk\lib\x86;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\dbg\</IntDir>
   </PropertyGroup>
@@ -89,13 +89,13 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\dbg\</IntDir>
-    <LibraryPath>..\lib\iconv\lib\x64;..\lib\discord_sdk\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>..\lib\discord_sdk\include;..\lib\iconv\include;..\lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>lib\iconv\lib\x64;lib\discord_sdk\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>lib\discord_sdk\include;lib\iconv\include;lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>..\lib\discord_sdk\include;..\lib\iconv\include;..\lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <LibraryPath>..\lib\iconv\lib\x64;..\lib\discord_sdk\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>lib\discord_sdk\include;lib\iconv\include;lib\json;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>lib\iconv\lib\x64;lib\discord_sdk\lib\x64;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\</OutDir>
     <IntDir>$(SolutionDir)\_build\$(Configuration)\$(PlatformTarget)\dbg\</IntDir>
   </PropertyGroup>
@@ -175,84 +175,84 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\lib\discord_sdk\include\achievement_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\activity_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\application_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\core.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\image_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\lobby_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\network_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\overlay_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\relationship_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\storage_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\store_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\types.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\user_manager.cpp" />
-    <ClCompile Include="..\lib\discord_sdk\include\voice_manager.cpp" />
-    <ClCompile Include="classes\CodePageConverter.cpp" />
-    <ClCompile Include="classes\Console.cpp" />
-    <ClCompile Include="classes\DiscordManager.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="utils\utils.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\achievement_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\activity_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\application_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\core.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\image_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\lobby_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\network_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\overlay_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\relationship_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\storage_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\store_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\types.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\user_manager.cpp" />
+    <ClCompile Include="lib\discord_sdk\include\voice_manager.cpp" />
+    <ClCompile Include="src\classes\CodePageConverter.cpp" />
+    <ClCompile Include="src\classes\Console.cpp" />
+    <ClCompile Include="src\classes\DiscordManager.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\utils\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\lib\discord_sdk\include\achievement_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\activity_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\application_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\core.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\discord.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\event.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\ffi.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\image_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\lobby_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\network_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\overlay_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\relationship_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\storage_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\store_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\types.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\user_manager.h" />
-    <ClInclude Include="..\lib\discord_sdk\include\voice_manager.h" />
-    <ClInclude Include="..\lib\iconv\include\iconv.h" />
-    <ClInclude Include="..\lib\json\json.hpp" />
-    <ClInclude Include="..\res\resource.h" />
-    <ClInclude Include="classes\CodePageConverter.hpp" />
-    <ClInclude Include="classes\Console.hpp" />
-    <ClInclude Include="classes\DiscordManager.hpp" />
-    <ClInclude Include="classes\FileReader.hpp" />
-    <ClInclude Include="settings\structs.hpp" />
-    <ClInclude Include="utils\colorstream.hpp" />
-    <ClInclude Include="utils\utils.hpp" />
+    <ClInclude Include="lib\discord_sdk\include\achievement_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\activity_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\application_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\core.h" />
+    <ClInclude Include="lib\discord_sdk\include\discord.h" />
+    <ClInclude Include="lib\discord_sdk\include\event.h" />
+    <ClInclude Include="lib\discord_sdk\include\ffi.h" />
+    <ClInclude Include="lib\discord_sdk\include\image_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\lobby_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\network_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\overlay_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\relationship_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\storage_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\store_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\types.h" />
+    <ClInclude Include="lib\discord_sdk\include\user_manager.h" />
+    <ClInclude Include="lib\discord_sdk\include\voice_manager.h" />
+    <ClInclude Include="lib\iconv\include\iconv.h" />
+    <ClInclude Include="lib\json\json.hpp" />
+    <ClInclude Include="res\resource.h" />
+    <ClInclude Include="src\classes\CodePageConverter.hpp" />
+    <ClInclude Include="src\classes\Console.hpp" />
+    <ClInclude Include="src\classes\DiscordManager.hpp" />
+    <ClInclude Include="src\classes\FileReader.hpp" />
+    <ClInclude Include="src\settings\structs.hpp" />
+    <ClInclude Include="src\utils\colorstream.hpp" />
+    <ClInclude Include="src\utils\utils.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\lib\discord_sdk\lib\x64\discord_game_sdk.dll.lib" />
-    <Library Include="..\lib\discord_sdk\lib\x86\discord_game_sdk.dll.lib">
+    <Library Include="lib\discord_sdk\lib\x64\discord_game_sdk.dll.lib" />
+    <Library Include="lib\discord_sdk\lib\x86\discord_game_sdk.dll.lib">
       <DeploymentContent>true</DeploymentContent>
     </Library>
-    <Library Include="..\lib\iconv\lib\x64\libiconv.lib" />
-    <Library Include="..\lib\iconv\lib\x64\libiconv_d.lib" />
-    <Library Include="..\lib\iconv\lib\x86\libiconv.lib" />
-    <Library Include="..\lib\iconv\lib\x86\libiconv_d.lib" />
+    <Library Include="lib\iconv\lib\x64\libiconv.lib" />
+    <Library Include="lib\iconv\lib\x64\libiconv_d.lib" />
+    <Library Include="lib\iconv\lib\x86\libiconv.lib" />
+    <Library Include="lib\iconv\lib\x86\libiconv_d.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\readme-res\discord.png" />
-    <Image Include="..\readme-res\preview.png" />
+    <Image Include="readme-res\discord.png" />
+    <Image Include="readme-res\preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="..\res\resource.rc" />
+    <ResourceCompile Include="res\resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\.gitattributes" />
-    <None Include="..\.github\FUNDING.yml" />
-    <None Include="..\.github\workflows\build.yml" />
-    <None Include="..\.github\workflows\release.yml" />
-    <None Include="..\.gitignore" />
-    <None Include="..\external\asi_loader\x64\dinput8.dll" />
-    <None Include="..\external\asi_loader\x86\dinput8.dll" />
-    <None Include="..\external\discord_sdk\x64\discord_game_sdk.dll" />
-    <None Include="..\external\discord_sdk\x86\discord_game_sdk.dll" />
-    <None Include="..\LICENSE" />
-    <None Include="..\README.md" />
+    <None Include=".gitattributes" />
+    <None Include=".github\FUNDING.yml" />
+    <None Include=".github\workflows\build.yml" />
+    <None Include=".github\workflows\release.yml" />
+    <None Include=".gitignore" />
+    <None Include="external\asi_loader\x64\dinput8.dll" />
+    <None Include="external\asi_loader\x86\dinput8.dll" />
+    <None Include="external\discord_sdk\x64\discord_game_sdk.dll" />
+    <None Include="external\discord_sdk\x86\discord_game_sdk.dll" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
